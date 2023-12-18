@@ -1,0 +1,999 @@
+2023-12-17 23:28:33,602 - DEBUG - load_ssl_context verify=True cert=None trust_env=True http2=False
+2023-12-17 23:28:33,606 - DEBUG - load_verify_locations cafile='/Users/volkopat/Downloads/GeneticAlgorithm/venv/lib/python3.10/site-packages/certifi/cacert.pem'
+2023-12-17 23:28:33,614 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Objective: Generate a list of numbers and define an appropriate bucket size. The output should be structured in JSON format.\n\n            Task Details:\n\n            Generate Numbers:\n            Create a list of random 1,2 or 3 digit numbers of any length of the list, atleast 30.\n            Define Bucket Size:\n            Determine a large bucket size, preferably 4 digits for the generated list of numbers.\n            JSON Output Format:\n            Format the output as follows:\n            json\n            Copy code\n            {\n            "numberList": [Generated list of numbers as a list],\n            "bucketSize": [Defined bucket size as Integer]\n            }\n            Guidelines:\n\n            Ensure the numbers and bucket size are logically consistent and applicable.\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:28:33,630 - DEBUG - connect_tcp.started host='api.openai.com' port=443 local_address=None timeout=5.0 socket_options=None
+2023-12-17 23:28:33,864 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x105136c80>
+2023-12-17 23:28:33,865 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x104f774c0> server_hostname='api.openai.com' timeout=5.0
+2023-12-17 23:28:33,906 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x105136c50>
+2023-12-17 23:28:33,906 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:28:33,907 - DEBUG - send_request_headers.complete
+2023-12-17 23:28:33,907 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:28:33,907 - DEBUG - send_request_body.complete
+2023-12-17 23:28:33,907 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:28:41,675 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:28:41 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'7629'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'449767'), (b'x-ratelimit-remaining-tokens_usage_based', b'449767'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'31ms'), (b'x-ratelimit-reset-tokens_usage_based', b'31ms'), (b'x-request-id', b'2835d091544320b46e57428fa0af771b'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Set-Cookie', b'__cf_bm=0ZaoZMtlNG6J566ia8NwOSZcRynLPjmVYyVJOHMdcQQ-1702873721-1-AXAOLA52wiQsy9TpDTiymROKECW8Eh+4vRnHQc1/ydKakzc1F+HQtonPbj8qFgKmfVOa5e8BJhd6BQ93MuKqSjE=; path=/; expires=Mon, 18-Dec-23 04:58:41 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Set-Cookie', b'_cfuvid=pZYKKA.7d2TXuWK3l8KS4Ja.S5dZZDFFbjSS6mhYrro-1702873721721-0-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374a8e87cb3c338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:28:41,678 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:28:41,678 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:28:41,679 - DEBUG - receive_response_body.complete
+2023-12-17 23:28:41,679 - DEBUG - response_closed.started
+2023-12-17 23:28:41,679 - DEBUG - response_closed.complete
+2023-12-17 23:28:41,680 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:28:41,685 - INFO - Number List: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]
+2023-12-17 23:28:41,685 - INFO - Bucket Size: 10000
+2023-12-17 23:28:41,691 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Objective: Optimize and research innovative methods to enhance an algorithm\'s performance. Develop new mathematical approaches for superior efficiency.\n\n        Inputs:\n        - numbers: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]\n        - bucket_limit: 10000\n\n        Instructions:\n        1. Develop a Python function named \'optimized_bucket_filler\'. This function should take two parameters: a list of numbers (\'numbers\') and a bucket size limit (\'bucket_limit\'). \n        2. The function\'s task is to optimize and arrange the numbers into buckets, each adhering to the bucket size limit. Each bucket should contain numbers that sum up to less than or equal to the \'bucket_limit\'.\n        3. Ensure that the function handles edge cases and operates safely with list manipulations to avoid errors like \'IndexError\'.\n        4. Create pseudocode for the \'optimized_bucket_filler\' function. The pseudocode should clearly describe the logic and steps involved in the function, including handling of edge cases.\n        5. The final output should consist solely of the function definition and the corresponding pseudocode. Do not include function calls or print statements in the output.\n        6. If no specific pip dependencies are required for the function, default the \'pip_command\' to \'None\'.\n        7. If external libraries are necessary (such as numpy, scipy, or scikit-learn), clearly list these dependencies in the \'pip_command\' section of the JSON output and import them before the function.\n        8. Ensure adherence to the following output format, formatted as JSON:\n        {\n            "pip_command": "List of pip dependencies (comma-separated) or \'None\' if no dependencies are required",\n            "program_code": "Python function \'optimized_bucket_filler\' definition",\n            "pseudocode": "Pseudocode describing the logic of \'optimized_bucket_filler\'",\n            "equation": "Mathematical Logic in LaTeX representing the Program logic"\n        }\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:28:41,692 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:28:41,692 - DEBUG - send_request_headers.complete
+2023-12-17 23:28:41,692 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:28:41,692 - DEBUG - send_request_body.complete
+2023-12-17 23:28:41,693 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:29:05,880 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:29:05 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'24031'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'449437'), (b'x-ratelimit-remaining-tokens_usage_based', b'449437'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'74ms'), (b'x-ratelimit-reset-tokens_usage_based', b'74ms'), (b'x-request-id', b'366fb143a76f198236b6ccddc84d5319'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374a9192b29c338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:29:05,882 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:29:05,882 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:29:05,883 - DEBUG - receive_response_body.complete
+2023-12-17 23:29:05,883 - DEBUG - response_closed.started
+2023-12-17 23:29:05,883 - DEBUG - response_closed.complete
+2023-12-17 23:29:05,883 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:29:05,886 - INFO - ----- Master Program Details -----
+2023-12-17 23:29:05,886 - INFO - Master Program Code:
+def optimized_bucket_filler(numbers, bucket_limit):
+    # Sort the numbers in descending order
+    numbers.sort(reverse=True)
+
+    # Initialize buckets list
+    buckets = []
+
+    # Loop through all the numbers
+    for number in numbers:
+        # If the number exceeds the bucket_limit, skip it
+        if number > bucket_limit:
+            continue
+
+        # Try to fit the number in existing buckets
+        placed = False
+        for bucket in buckets:
+            if sum(bucket) + number <= bucket_limit:
+                bucket.append(number)
+                placed = True
+                break
+
+        # If the number didn't fit in any existing bucket, create a new one
+        if not placed:
+            buckets.append([number])
+
+    return buckets
+2023-12-17 23:29:05,886 - INFO - Equation:
+No specific mathematical equation since the logic is algorithmic and doesn't directly translate to a mathematical formula.
+2023-12-17 23:29:05,887 - INFO - Pseudocode:
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    SORT numbers in descending order
+    INITIALIZE buckets as empty list
+    FOR each number in numbers
+        IF number is greater than bucket_limit THEN
+            CONTINUE to next iteration
+        ENDIF
+        INITIALIZE placed as False
+        FOR each bucket in buckets
+            IF sum of bucket + number is less than or equal to bucket_limit THEN
+                APPEND number to the bucket
+                SET placed to True
+                BREAK the loop
+            ENDIF
+        ENDFOR
+        IF not placed THEN
+            CREATE a new bucket with the number
+        ENDIF
+    ENDFOR
+    RETURN buckets
+ENDFUNCTION
+2023-12-17 23:29:05,887 - INFO - Master Results Evaluation:
+2023-12-17 23:29:05,888 - INFO - Time Taken: 3.0994415283203125e-05
+2023-12-17 23:29:05,888 - INFO - Memory Used: 0
+2023-12-17 23:29:05,888 - INFO - Score: 0
+2023-12-17 23:29:05,888 - INFO - Fitness Score: 49.99907019636022
+2023-12-17 23:29:05,888 - INFO - Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:29:05,894 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Objective: Further optimize and enhance an existing algorithm based on inputs from a previous iteration. Develop and refine mathematical approaches for increased efficiency, striking a balance between experimentation and exploitation.\n\n        Parent Inputs:\n        - Previous Program: \n        def optimized_bucket_filler(numbers, bucket_limit):\n    # Sort the numbers in descending order\n    numbers.sort(reverse=True)\n\n    # Initialize buckets list\n    buckets = []\n\n    # Loop through all the numbers\n    for number in numbers:\n        # If the number exceeds the bucket_limit, skip it\n        if number > bucket_limit:\n            continue\n\n        # Try to fit the number in existing buckets\n        placed = False\n        for bucket in buckets:\n            if sum(bucket) + number <= bucket_limit:\n                bucket.append(number)\n                placed = True\n                break\n\n        # If the number didn\'t fit in any existing bucket, create a new one\n        if not placed:\n            buckets.append([number])\n\n    return buckets\n\n        - Previous Mathematical Equation: \n        No specific mathematical equation since the logic is algorithmic and doesn\'t directly translate to a mathematical formula.\n\n        - Previous Pseudocode: \n        FUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets as empty list\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        ENDIF\n        INITIALIZE placed as False\n        FOR each bucket in buckets\n            IF sum of bucket + number is less than or equal to bucket_limit THEN\n                APPEND number to the bucket\n                SET placed to True\n                BREAK the loop\n            ENDIF\n        ENDFOR\n        IF not placed THEN\n            CREATE a new bucket with the number\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n\n        - Previous Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Previous Fitness Score: \n        49.99907019636022\n\n        New Inputs:\n        - numbers: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]\n        - bucket_limit: 10000\n\n        Instructions:\n        1. Analyze the inputs from the \'Parent\' section, which includes the program, mathematical equation, pseudocode, buckets, and fitness score from the previous iteration.\n        2. Develop a new or significantly refined Python function named \'optimized_bucket_filler\', ensuring it does not replicate the previous program but builds upon and optimizes it.\n        3. Innovate in the algorithm\'s approach, introducing new concepts or methods that strike a balance between leveraging the existing solution (\'exploitation\') and exploring new possibilities (\'experimentation\').\n        4. Create or update pseudocode for the new \'optimized_bucket_filler\' function. The pseudocode should clearly outline the innovative logic and steps, demonstrating the advancements made over the previous iteration.\n        5. The function should optimize the number distribution into buckets, adhering to the \'bucket_limit\', with a focus on improving the previous fitness score through innovative methods.\n        6. The final output should include the new function definition, its corresponding pseudocode, and any other enhancements made over the previous iteration.\n        7. If no new pip dependencies are identified, default the \'pip_command\' to \'None\'.\n        8. If external libraries are necessary (such as numpy, scipy, or scikit-learn), clearly list these dependencies in the \'pip_command\' section of the JSON output and import them before the function.\n        9. Ensure adherence to the following output format, formatted as JSON:\n        {\n            "pip_command": "List of pip dependencies (comma-separated) or \'None\' if no dependencies are required",\n            "program_code": "Python function \'optimized_bucket_filler\' definition showcasing innovation and improvement",\n            "pseudocode": "Updated Pseudocode for the innovative \'optimized_bucket_filler\'",\n            "equation": "Refined Mathematical Logic in LaTeX representing the enhanced Program logic"\n        }\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:29:05,895 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:29:05,895 - DEBUG - send_request_headers.complete
+2023-12-17 23:29:05,895 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:29:05,896 - DEBUG - send_request_body.complete
+2023-12-17 23:29:05,896 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:29:26,869 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:29:26 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'20793'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'448844'), (b'x-ratelimit-remaining-tokens_usage_based', b'448844'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'154ms'), (b'x-ratelimit-reset-tokens_usage_based', b'154ms'), (b'x-request-id', b'66b12c2c010c6839f9d4ee2a236c3b76'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374a9b06c16c338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:29:26,872 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:29:26,872 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:29:26,873 - DEBUG - receive_response_body.complete
+2023-12-17 23:29:26,873 - DEBUG - response_closed.started
+2023-12-17 23:29:26,873 - DEBUG - response_closed.complete
+2023-12-17 23:29:26,873 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:29:26,878 - INFO - ----- Parent 1 Details -----
+2023-12-17 23:29:26,878 - INFO - Program Code:
+def optimized_bucket_filler(numbers, bucket_limit):
+    # Sort the numbers in descending order
+    numbers.sort(reverse=True)
+
+    # Initialize buckets list
+    buckets = [[numbers[0]]]
+    numbers = numbers[1:]
+
+    # Initialize gaps list with the initial gap
+    gaps = [bucket_limit - numbers[0]]
+
+    # Loop through all the numbers
+    for number in numbers:
+        # If the number exceeds the bucket_limit, skip it
+        if number > bucket_limit:
+            continue
+
+        # Find the bucket with the best fit for the current number
+        best_fit_idx = -1
+        min_gap = bucket_limit
+        for i, gap in enumerate(gaps):
+            if gap >= number and gap < min_gap:
+                min_gap = gap
+                best_fit_idx = i
+
+        # If a fit is found, place the number in the corresponding bucket
+        if best_fit_idx != -1:
+            buckets[best_fit_idx].append(number)
+            gaps[best_fit_idx] -= number
+        # Else, create a new bucket
+        else:
+            buckets.append([number])
+            gaps.append(bucket_limit - number)
+
+    return buckets
+2023-12-17 23:29:26,878 - INFO - Equation:
+\text{No new mathematical equation is provided as the refined logic is algorithmically driven, focusing on an improved heuristic for bucket packing rather than a closed-form mathematical formula.}
+2023-12-17 23:29:26,878 - INFO - Pseudocode:
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    SORT numbers in descending order
+    INITIALIZE buckets with first number in a new bucket
+    REMOVE the first number from the list
+    INITIALIZE gaps with the initial gap after placing the first number
+    FOR each number in the remaining numbers
+        IF number is greater than bucket_limit THEN
+            CONTINUE to next number
+        FIND the index of the bucket with the minimum gap that can accommodate the number
+        IF such bucket is found THEN
+            APPEND number to this bucket
+            UPDATE the corresponding gap
+        ELSE
+            CREATE a new bucket with the number
+            ADD the new gap to gaps list
+        ENDIF
+    ENDFOR
+    RETURN buckets
+ENDFUNCTION
+2023-12-17 23:29:26,878 - INFO - Evaluation Results:
+Time Taken: 5.7697296142578125e-05
+Memory Used: 0
+Score: 0
+Fitness Score: 49.99826918097929
+Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:29:26,884 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Objective: Further optimize and enhance an existing algorithm based on inputs from a previous iteration. Develop and refine mathematical approaches for increased efficiency, striking a balance between experimentation and exploitation.\n\n        Parent Inputs:\n        - Previous Program: \n        def optimized_bucket_filler(numbers, bucket_limit):\n    # Sort the numbers in descending order\n    numbers.sort(reverse=True)\n\n    # Initialize buckets list\n    buckets = []\n\n    # Loop through all the numbers\n    for number in numbers:\n        # If the number exceeds the bucket_limit, skip it\n        if number > bucket_limit:\n            continue\n\n        # Try to fit the number in existing buckets\n        placed = False\n        for bucket in buckets:\n            if sum(bucket) + number <= bucket_limit:\n                bucket.append(number)\n                placed = True\n                break\n\n        # If the number didn\'t fit in any existing bucket, create a new one\n        if not placed:\n            buckets.append([number])\n\n    return buckets\n\n        - Previous Mathematical Equation: \n        No specific mathematical equation since the logic is algorithmic and doesn\'t directly translate to a mathematical formula.\n\n        - Previous Pseudocode: \n        FUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets as empty list\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        ENDIF\n        INITIALIZE placed as False\n        FOR each bucket in buckets\n            IF sum of bucket + number is less than or equal to bucket_limit THEN\n                APPEND number to the bucket\n                SET placed to True\n                BREAK the loop\n            ENDIF\n        ENDFOR\n        IF not placed THEN\n            CREATE a new bucket with the number\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n\n        - Previous Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Previous Fitness Score: \n        49.99907019636022\n\n        New Inputs:\n        - numbers: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]\n        - bucket_limit: 10000\n\n        Instructions:\n        1. Analyze the inputs from the \'Parent\' section, which includes the program, mathematical equation, pseudocode, buckets, and fitness score from the previous iteration.\n        2. Develop a new or significantly refined Python function named \'optimized_bucket_filler\', ensuring it does not replicate the previous program but builds upon and optimizes it.\n        3. Innovate in the algorithm\'s approach, introducing new concepts or methods that strike a balance between leveraging the existing solution (\'exploitation\') and exploring new possibilities (\'experimentation\').\n        4. Create or update pseudocode for the new \'optimized_bucket_filler\' function. The pseudocode should clearly outline the innovative logic and steps, demonstrating the advancements made over the previous iteration.\n        5. The function should optimize the number distribution into buckets, adhering to the \'bucket_limit\', with a focus on improving the previous fitness score through innovative methods.\n        6. The final output should include the new function definition, its corresponding pseudocode, and any other enhancements made over the previous iteration.\n        7. If no new pip dependencies are identified, default the \'pip_command\' to \'None\'.\n        8. If external libraries are necessary (such as numpy, scipy, or scikit-learn), clearly list these dependencies in the \'pip_command\' section of the JSON output and import them before the function.\n        9. Ensure adherence to the following output format, formatted as JSON:\n        {\n            "pip_command": "List of pip dependencies (comma-separated) or \'None\' if no dependencies are required",\n            "program_code": "Python function \'optimized_bucket_filler\' definition showcasing innovation and improvement",\n            "pseudocode": "Updated Pseudocode for the innovative \'optimized_bucket_filler\'",\n            "equation": "Refined Mathematical Logic in LaTeX representing the enhanced Program logic"\n        }\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:29:26,886 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:29:26,886 - DEBUG - send_request_headers.complete
+2023-12-17 23:29:26,886 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:29:26,886 - DEBUG - send_request_body.complete
+2023-12-17 23:29:26,886 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:29:51,762 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:29:51 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'24740'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'448844'), (b'x-ratelimit-remaining-tokens_usage_based', b'448844'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'154ms'), (b'x-ratelimit-reset-tokens_usage_based', b'154ms'), (b'x-request-id', b'd3857e86fdb0ef24642175ce3ac362b5'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374aa338cd0c338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:29:51,763 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:29:51,763 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:29:51,764 - DEBUG - receive_response_body.complete
+2023-12-17 23:29:51,764 - DEBUG - response_closed.started
+2023-12-17 23:29:51,764 - DEBUG - response_closed.complete
+2023-12-17 23:29:51,765 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:29:51,768 - INFO - ----- Parent 2 Details -----
+2023-12-17 23:29:51,768 - INFO - Program Code:
+def optimized_bucket_filler(numbers, bucket_limit):
+    # Sort numbers and initialize variables
+    numbers.sort(reverse=True)
+    buckets = []
+    remaining_space = []
+
+    # Create initial buckets with the first number
+    for number in numbers:
+        # Number exceeds bucket limit check
+        if number > bucket_limit:
+            continue
+
+        # Try to place number in the bucket with the most suitable space
+        best_fit_idx = -1
+        min_space_left = float('inf')
+        for i, space in enumerate(remaining_space):
+            if space >= number and space - number < min_space_left:
+                min_space_left = space - number
+                best_fit_idx = i
+
+        # Place number in the best bucket or create a new one
+        if best_fit_idx != -1:
+            buckets[best_fit_idx].append(number)
+            remaining_space[best_fit_idx] -= number
+        else:
+            buckets.append([number])
+            remaining_space.append(bucket_limit - number)
+
+    return buckets
+2023-12-17 23:29:51,768 - INFO - Equation:
+Let \text{{best_fit}} be the index of the bucket that minimizes \text{{remaining_space}}_i - \text{{number}}, \text{{such that}} \text{{remaining_space}}_i \geq \text{{number}}. \text{{If no such bucket exists, create a new one.}}
+2023-12-17 23:29:51,768 - INFO - Pseudocode:
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    SORT numbers in descending order
+    INITIALIZE buckets and remaining_space as empty lists
+    FOR each number in numbers
+        IF number is greater than bucket_limit THEN
+            CONTINUE to next iteration
+        END IF
+        INITIALIZE best_fit_idx as -1
+        INITIALIZE min_space_left as infinity
+        FOR each index, space in remaining_space
+            IF space >= number AND space - number < min_space_left THEN
+                SET min_space_left to space - number
+                SET best_fit_idx to current index
+            END IF
+        END FOR
+        IF best_fit_idx is not -1 THEN
+            APPEND number to buckets at best_fit_idx
+            SUBTRACT number from remaining_space at best_fit_idx
+        ELSE
+            CREATE a new bucket with number
+            ADD bucket_limit - number to remaining_space
+        END IF
+    END FOR
+    RETURN buckets
+END FUNCTION
+2023-12-17 23:29:51,769 - INFO - Evaluation Results:
+Time Taken: 4.601478576660156e-05
+Memory Used: 0
+Score: 0
+Fitness Score: 49.99861961994489
+Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:29:51,775 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Objective: Further optimize and enhance an existing algorithm based on inputs from a previous iteration. Develop and refine mathematical approaches for increased efficiency, striking a balance between experimentation and exploitation.\n\n        Parent Inputs:\n        - Previous Program: \n        def optimized_bucket_filler(numbers, bucket_limit):\n    # Sort the numbers in descending order\n    numbers.sort(reverse=True)\n\n    # Initialize buckets list\n    buckets = []\n\n    # Loop through all the numbers\n    for number in numbers:\n        # If the number exceeds the bucket_limit, skip it\n        if number > bucket_limit:\n            continue\n\n        # Try to fit the number in existing buckets\n        placed = False\n        for bucket in buckets:\n            if sum(bucket) + number <= bucket_limit:\n                bucket.append(number)\n                placed = True\n                break\n\n        # If the number didn\'t fit in any existing bucket, create a new one\n        if not placed:\n            buckets.append([number])\n\n    return buckets\n\n        - Previous Mathematical Equation: \n        No specific mathematical equation since the logic is algorithmic and doesn\'t directly translate to a mathematical formula.\n\n        - Previous Pseudocode: \n        FUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets as empty list\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        ENDIF\n        INITIALIZE placed as False\n        FOR each bucket in buckets\n            IF sum of bucket + number is less than or equal to bucket_limit THEN\n                APPEND number to the bucket\n                SET placed to True\n                BREAK the loop\n            ENDIF\n        ENDFOR\n        IF not placed THEN\n            CREATE a new bucket with the number\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n\n        - Previous Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Previous Fitness Score: \n        49.99907019636022\n\n        New Inputs:\n        - numbers: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]\n        - bucket_limit: 10000\n\n        Instructions:\n        1. Analyze the inputs from the \'Parent\' section, which includes the program, mathematical equation, pseudocode, buckets, and fitness score from the previous iteration.\n        2. Develop a new or significantly refined Python function named \'optimized_bucket_filler\', ensuring it does not replicate the previous program but builds upon and optimizes it.\n        3. Innovate in the algorithm\'s approach, introducing new concepts or methods that strike a balance between leveraging the existing solution (\'exploitation\') and exploring new possibilities (\'experimentation\').\n        4. Create or update pseudocode for the new \'optimized_bucket_filler\' function. The pseudocode should clearly outline the innovative logic and steps, demonstrating the advancements made over the previous iteration.\n        5. The function should optimize the number distribution into buckets, adhering to the \'bucket_limit\', with a focus on improving the previous fitness score through innovative methods.\n        6. The final output should include the new function definition, its corresponding pseudocode, and any other enhancements made over the previous iteration.\n        7. If no new pip dependencies are identified, default the \'pip_command\' to \'None\'.\n        8. If external libraries are necessary (such as numpy, scipy, or scikit-learn), clearly list these dependencies in the \'pip_command\' section of the JSON output and import them before the function.\n        9. Ensure adherence to the following output format, formatted as JSON:\n        {\n            "pip_command": "List of pip dependencies (comma-separated) or \'None\' if no dependencies are required",\n            "program_code": "Python function \'optimized_bucket_filler\' definition showcasing innovation and improvement",\n            "pseudocode": "Updated Pseudocode for the innovative \'optimized_bucket_filler\'",\n            "equation": "Refined Mathematical Logic in LaTeX representing the enhanced Program logic"\n        }\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:29:51,776 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:29:51,776 - DEBUG - send_request_headers.complete
+2023-12-17 23:29:51,776 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:29:51,776 - DEBUG - send_request_body.complete
+2023-12-17 23:29:51,776 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:30:16,135 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:30:16 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'24212'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'448844'), (b'x-ratelimit-remaining-tokens_usage_based', b'448844'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'154ms'), (b'x-ratelimit-reset-tokens_usage_based', b'154ms'), (b'x-request-id', b'ab3494441040182070a29174ede86cc4'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374aacf2d12c338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:30:16,137 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:30:16,137 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:30:16,138 - DEBUG - receive_response_body.complete
+2023-12-17 23:30:16,138 - DEBUG - response_closed.started
+2023-12-17 23:30:16,138 - DEBUG - response_closed.complete
+2023-12-17 23:30:16,138 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:30:16,142 - INFO - ----- Parent 3 Details -----
+2023-12-17 23:30:16,143 - INFO - Program Code:
+def optimized_bucket_filler(numbers, bucket_limit):
+    numbers.sort(reverse=True)
+    buckets = []
+
+    for number in numbers:
+        difference_dict = {}
+        for i, bucket in enumerate(buckets):
+            current_sum = sum(bucket)
+            if current_sum + number <= bucket_limit:
+                difference = bucket_limit - (current_sum + number)
+                difference_dict[i] = difference
+
+        if difference_dict:
+            min_difference = min(difference_dict.values())
+            for bucket_index in difference_dict:
+                if difference_dict[bucket_index] == min_difference:
+                    buckets[bucket_index].append(number)
+                    break
+        else:
+            buckets.append([number])
+
+    return buckets
+2023-12-17 23:30:16,143 - INFO - Equation:
+Let \text{buckets} be a list of lists representing each bucket. Let \text{number} represent an element from the input list numbers. For each \text{number}, find a bucket where the difference between \text{bucket_limit} and the sum of elements in the bucket after adding \text{number} is minimized, but not negative. If no such bucket exists, create a new bucket with \text{number}. The goal is to minimize the sum across all buckets of the differences between the bucket limits and the sums of their elements.
+2023-12-17 23:30:16,143 - INFO - Pseudocode:
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    SORT numbers in descending order
+    INITIALIZE buckets as empty list
+    FOR each number in numbers
+        INITIALIZE difference_dict as empty dict
+        FOR each bucket in enumerate(buckets)
+            SET current_sum to the sum of numbers in the bucket
+            IF current_sum + number is less than or equal to bucket_limit THEN
+                SET difference to bucket_limit - (current_sum + number)
+                SET difference_dict[bucket index] to difference
+            ENDIF
+        ENDFOR
+        IF difference_dict THEN
+            SET min_difference to min value in difference_dict values
+            FOR each bucket_index in difference_dict
+                IF difference_dict[bucket_index] is min_difference THEN
+                    APPEND number to the bucket at bucket_index
+                    BREAK
+                ENDIF
+            ENDFOR
+        ELSE
+            CREATE new bucket with number
+        ENDIF
+    ENDFOR
+    RETURN buckets
+ENDFUNCTION
+2023-12-17 23:30:16,143 - INFO - Evaluation Results:
+Time Taken: 8.392333984375e-05
+Memory Used: 0
+Score: 0
+Fitness Score: 49.99748251108076
+Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:30:16,149 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Objective: Further optimize and enhance an existing algorithm based on inputs from a previous iteration. Develop and refine mathematical approaches for increased efficiency, striking a balance between experimentation and exploitation.\n\n        Parent Inputs:\n        - Previous Program: \n        def optimized_bucket_filler(numbers, bucket_limit):\n    # Sort the numbers in descending order\n    numbers.sort(reverse=True)\n\n    # Initialize buckets list\n    buckets = []\n\n    # Loop through all the numbers\n    for number in numbers:\n        # If the number exceeds the bucket_limit, skip it\n        if number > bucket_limit:\n            continue\n\n        # Try to fit the number in existing buckets\n        placed = False\n        for bucket in buckets:\n            if sum(bucket) + number <= bucket_limit:\n                bucket.append(number)\n                placed = True\n                break\n\n        # If the number didn\'t fit in any existing bucket, create a new one\n        if not placed:\n            buckets.append([number])\n\n    return buckets\n\n        - Previous Mathematical Equation: \n        No specific mathematical equation since the logic is algorithmic and doesn\'t directly translate to a mathematical formula.\n\n        - Previous Pseudocode: \n        FUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets as empty list\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        ENDIF\n        INITIALIZE placed as False\n        FOR each bucket in buckets\n            IF sum of bucket + number is less than or equal to bucket_limit THEN\n                APPEND number to the bucket\n                SET placed to True\n                BREAK the loop\n            ENDIF\n        ENDFOR\n        IF not placed THEN\n            CREATE a new bucket with the number\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n\n        - Previous Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Previous Fitness Score: \n        49.99907019636022\n\n        New Inputs:\n        - numbers: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]\n        - bucket_limit: 10000\n\n        Instructions:\n        1. Analyze the inputs from the \'Parent\' section, which includes the program, mathematical equation, pseudocode, buckets, and fitness score from the previous iteration.\n        2. Develop a new or significantly refined Python function named \'optimized_bucket_filler\', ensuring it does not replicate the previous program but builds upon and optimizes it.\n        3. Innovate in the algorithm\'s approach, introducing new concepts or methods that strike a balance between leveraging the existing solution (\'exploitation\') and exploring new possibilities (\'experimentation\').\n        4. Create or update pseudocode for the new \'optimized_bucket_filler\' function. The pseudocode should clearly outline the innovative logic and steps, demonstrating the advancements made over the previous iteration.\n        5. The function should optimize the number distribution into buckets, adhering to the \'bucket_limit\', with a focus on improving the previous fitness score through innovative methods.\n        6. The final output should include the new function definition, its corresponding pseudocode, and any other enhancements made over the previous iteration.\n        7. If no new pip dependencies are identified, default the \'pip_command\' to \'None\'.\n        8. If external libraries are necessary (such as numpy, scipy, or scikit-learn), clearly list these dependencies in the \'pip_command\' section of the JSON output and import them before the function.\n        9. Ensure adherence to the following output format, formatted as JSON:\n        {\n            "pip_command": "List of pip dependencies (comma-separated) or \'None\' if no dependencies are required",\n            "program_code": "Python function \'optimized_bucket_filler\' definition showcasing innovation and improvement",\n            "pseudocode": "Updated Pseudocode for the innovative \'optimized_bucket_filler\'",\n            "equation": "Refined Mathematical Logic in LaTeX representing the enhanced Program logic"\n        }\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:30:16,150 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:30:16,150 - DEBUG - send_request_headers.complete
+2023-12-17 23:30:16,150 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:30:16,150 - DEBUG - send_request_body.complete
+2023-12-17 23:30:16,150 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:30:53,296 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:30:53 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'36902'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'448844'), (b'x-ratelimit-remaining-tokens_usage_based', b'448844'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'154ms'), (b'x-ratelimit-reset-tokens_usage_based', b'154ms'), (b'x-request-id', b'3a80128e966f4c8b904a7d729d816b5a'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374ab677af3c338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:30:53,298 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:30:53,299 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:30:53,299 - DEBUG - receive_response_body.complete
+2023-12-17 23:30:53,299 - DEBUG - response_closed.started
+2023-12-17 23:30:53,299 - DEBUG - response_closed.complete
+2023-12-17 23:30:53,300 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:30:53,302 - INFO - ----- Parent 4 Details -----
+2023-12-17 23:30:53,303 - INFO - Program Code:
+def optimized_bucket_filler(numbers, bucket_limit):
+    # Create a list of empty buckets with a list comprehension
+    buckets = [[] for _ in range(len(numbers) // 2 + 1)]
+
+    # Create a list of the current sum of each bucket
+    bucket_sums = [0] * len(buckets)
+
+    # Sort the numbers in descending order
+    numbers.sort(reverse=True)
+
+    for number in numbers:
+        # If the number is too large, skip it
+        if number > bucket_limit:
+            continue
+        # Find the best bucket for this number
+        min_diff = bucket_limit # Initialize minimum difference
+        best_bucket_index = -1
+        for i, bucket_sum in enumerate(bucket_sums):
+            # Calculate the potential new sum for this bucket
+            potential_sum = bucket_sum + number
+            if potential_sum <= bucket_limit:
+                diff = bucket_limit - potential_sum
+                # Find the bucket that will be closest to the bucket_limit if this number is added
+                if diff < min_diff:
+                    min_diff = diff
+                    best_bucket_index = i
+
+        # Add the number to the best fitting bucket if possible
+        if best_bucket_index >= 0:
+            buckets[best_bucket_index].append(number)
+            bucket_sums[best_bucket_index] += number
+        else:
+            # Add a new bucket if none fit
+            buckets.append([number])
+            bucket_sums.append(number)
+
+    # Remove any empty buckets
+    buckets = [bucket for bucket in buckets if bucket]
+
+    return buckets
+2023-12-17 23:30:53,303 - INFO - Equation:
+n/a
+2023-12-17 23:30:53,303 - INFO - Pseudocode:
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    INITIALIZE buckets with half the amount of numbers lists
+    INITIALIZE bucket_sums with zeros for each bucket
+    SORT numbers in descending order
+    FOR each number in numbers
+        IF number is greater than bucket_limit THEN
+            CONTINUE to next iteration
+        ENDIF
+        INITIALIZE min_diff to bucket_limit
+        INITIALIZE best_bucket_index to -1
+        FOR each index and sum in bucket_sums
+            CALCULATE potential_sum as sum + number
+            IF potential_sum is within bucket_limit THEN
+                CALCULATE diff as bucket_limit - potential_sum
+                IF diff is less than min_diff THEN
+                    SET min_diff to diff
+                    SET best_bucket_index to index
+                ENDIF
+            ENDIF
+        ENDFOR
+        IF a best_bucket_index is found THEN
+            ADD number to the identified bucket
+            UPDATE bucket_sums for that bucket
+        ELSE
+            CREATE a new bucket with the number
+        ENDIF
+    ENDFOR
+    FILTER out empty buckets
+    RETURN buckets
+ENDFUNCTION
+2023-12-17 23:30:53,303 - INFO - Evaluation Results:
+Time Taken: 0.00014710426330566406
+Memory Used: 0
+Score: 0
+Fitness Score: 49.995587521195276
+Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:30:53,308 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Objective: Further optimize and enhance an existing algorithm based on inputs from a previous iteration. Develop and refine mathematical approaches for increased efficiency, striking a balance between experimentation and exploitation.\n\n        Parent Inputs:\n        - Previous Program: \n        def optimized_bucket_filler(numbers, bucket_limit):\n    # Sort the numbers in descending order\n    numbers.sort(reverse=True)\n\n    # Initialize buckets list\n    buckets = []\n\n    # Loop through all the numbers\n    for number in numbers:\n        # If the number exceeds the bucket_limit, skip it\n        if number > bucket_limit:\n            continue\n\n        # Try to fit the number in existing buckets\n        placed = False\n        for bucket in buckets:\n            if sum(bucket) + number <= bucket_limit:\n                bucket.append(number)\n                placed = True\n                break\n\n        # If the number didn\'t fit in any existing bucket, create a new one\n        if not placed:\n            buckets.append([number])\n\n    return buckets\n\n        - Previous Mathematical Equation: \n        No specific mathematical equation since the logic is algorithmic and doesn\'t directly translate to a mathematical formula.\n\n        - Previous Pseudocode: \n        FUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets as empty list\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        ENDIF\n        INITIALIZE placed as False\n        FOR each bucket in buckets\n            IF sum of bucket + number is less than or equal to bucket_limit THEN\n                APPEND number to the bucket\n                SET placed to True\n                BREAK the loop\n            ENDIF\n        ENDFOR\n        IF not placed THEN\n            CREATE a new bucket with the number\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n\n        - Previous Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Previous Fitness Score: \n        49.99907019636022\n\n        New Inputs:\n        - numbers: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]\n        - bucket_limit: 10000\n\n        Instructions:\n        1. Analyze the inputs from the \'Parent\' section, which includes the program, mathematical equation, pseudocode, buckets, and fitness score from the previous iteration.\n        2. Develop a new or significantly refined Python function named \'optimized_bucket_filler\', ensuring it does not replicate the previous program but builds upon and optimizes it.\n        3. Innovate in the algorithm\'s approach, introducing new concepts or methods that strike a balance between leveraging the existing solution (\'exploitation\') and exploring new possibilities (\'experimentation\').\n        4. Create or update pseudocode for the new \'optimized_bucket_filler\' function. The pseudocode should clearly outline the innovative logic and steps, demonstrating the advancements made over the previous iteration.\n        5. The function should optimize the number distribution into buckets, adhering to the \'bucket_limit\', with a focus on improving the previous fitness score through innovative methods.\n        6. The final output should include the new function definition, its corresponding pseudocode, and any other enhancements made over the previous iteration.\n        7. If no new pip dependencies are identified, default the \'pip_command\' to \'None\'.\n        8. If external libraries are necessary (such as numpy, scipy, or scikit-learn), clearly list these dependencies in the \'pip_command\' section of the JSON output and import them before the function.\n        9. Ensure adherence to the following output format, formatted as JSON:\n        {\n            "pip_command": "List of pip dependencies (comma-separated) or \'None\' if no dependencies are required",\n            "program_code": "Python function \'optimized_bucket_filler\' definition showcasing innovation and improvement",\n            "pseudocode": "Updated Pseudocode for the innovative \'optimized_bucket_filler\'",\n            "equation": "Refined Mathematical Logic in LaTeX representing the enhanced Program logic"\n        }\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:30:53,309 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:30:53,309 - DEBUG - send_request_headers.complete
+2023-12-17 23:30:53,310 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:30:53,310 - DEBUG - send_request_body.complete
+2023-12-17 23:30:53,310 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:31:07,201 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:31:07 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'13746'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'448844'), (b'x-ratelimit-remaining-tokens_usage_based', b'448844'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'154ms'), (b'x-ratelimit-reset-tokens_usage_based', b'154ms'), (b'x-request-id', b'febad1abebc31de96a5cafc922c141e6'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374ac4fbbc9c338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:31:07,202 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:31:07,203 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:31:07,203 - DEBUG - receive_response_body.complete
+2023-12-17 23:31:07,203 - DEBUG - response_closed.started
+2023-12-17 23:31:07,204 - DEBUG - response_closed.complete
+2023-12-17 23:31:07,204 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:31:07,207 - ERROR - An error occurred during parent generation: unexpected indent (<unknown>, line 2). Retrying...
+2023-12-17 23:31:07,214 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Contextual Note: In the process of optimizing the algorithm, it\'s crucial to avoid replicating any previously generated algorithms that are already recorded as parents in the GeneticAlgorithmConfig. Each iteration must be unique in terms of its approach, methodology, and results.\n\n        Previous Attempt Details:\n        - Program Code: \n        unexpected indent (<unknown>, line 2)\n\n        - Error Message: \n        None\n\n        Additional Instructions:\n        1. Analyze the previous attempt and identify the reasons for failure.\n        2. Modify the \'optimized_bucket_filler\' function to address the identified issues.\n        3. Ensure the new algorithm is distinct from previous iterations stored in the GeneticAlgorithmConfig.\n        4. Emphasize experimental and innovative mathematical methods to yield a distinct result.\n        5. Cross-check against \'previous_results\' in the GeneticAlgorithmConfig for uniqueness.\n        6. Revise the approach to ensure novelty and innovation if the algorithm mirrors a previous iteration.\n        7. Aim to contribute something fresh and valuable to the overall genetic algorithm optimization process.\n        \n        Objective: Further optimize and enhance an existing algorithm based on inputs from a previous iteration. Develop and refine mathematical approaches for increased efficiency, striking a balance between experimentation and exploitation.\n\n        Parent Inputs:\n        - Previous Program: \n        def optimized_bucket_filler(numbers, bucket_limit):\n    # Sort the numbers in descending order\n    numbers.sort(reverse=True)\n\n    # Initialize buckets list\n    buckets = []\n\n    # Loop through all the numbers\n    for number in numbers:\n        # If the number exceeds the bucket_limit, skip it\n        if number > bucket_limit:\n            continue\n\n        # Try to fit the number in existing buckets\n        placed = False\n        for bucket in buckets:\n            if sum(bucket) + number <= bucket_limit:\n                bucket.append(number)\n                placed = True\n                break\n\n        # If the number didn\'t fit in any existing bucket, create a new one\n        if not placed:\n            buckets.append([number])\n\n    return buckets\n\n        - Previous Mathematical Equation: \n        No specific mathematical equation since the logic is algorithmic and doesn\'t directly translate to a mathematical formula.\n\n        - Previous Pseudocode: \n        FUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets as empty list\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        ENDIF\n        INITIALIZE placed as False\n        FOR each bucket in buckets\n            IF sum of bucket + number is less than or equal to bucket_limit THEN\n                APPEND number to the bucket\n                SET placed to True\n                BREAK the loop\n            ENDIF\n        ENDFOR\n        IF not placed THEN\n            CREATE a new bucket with the number\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n\n        - Previous Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Previous Fitness Score: \n        49.99907019636022\n\n        New Inputs:\n        - numbers: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]\n        - bucket_limit: 10000\n\n        Instructions:\n        1. Analyze the inputs from the \'Parent\' section, which includes the program, mathematical equation, pseudocode, buckets, and fitness score from the previous iteration.\n        2. Develop a new or significantly refined Python function named \'optimized_bucket_filler\', ensuring it does not replicate the previous program but builds upon and optimizes it.\n        3. Innovate in the algorithm\'s approach, introducing new concepts or methods that strike a balance between leveraging the existing solution (\'exploitation\') and exploring new possibilities (\'experimentation\').\n        4. Create or update pseudocode for the new \'optimized_bucket_filler\' function. The pseudocode should clearly outline the innovative logic and steps, demonstrating the advancements made over the previous iteration.\n        5. The function should optimize the number distribution into buckets, adhering to the \'bucket_limit\', with a focus on improving the previous fitness score through innovative methods.\n        6. The final output should include the new function definition, its corresponding pseudocode, and any other enhancements made over the previous iteration.\n        7. If no new pip dependencies are identified, default the \'pip_command\' to \'None\'.\n        8. If external libraries are necessary (such as numpy, scipy, or scikit-learn), clearly list these dependencies in the \'pip_command\' section of the JSON output and import them before the function.\n        9. Ensure adherence to the following output format, formatted as JSON:\n        {\n            "pip_command": "List of pip dependencies (comma-separated) or \'None\' if no dependencies are required",\n            "program_code": "Python function \'optimized_bucket_filler\' definition showcasing innovation and improvement",\n            "pseudocode": "Updated Pseudocode for the innovative \'optimized_bucket_filler\'",\n            "equation": "Refined Mathematical Logic in LaTeX representing the enhanced Program logic"\n        }\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:31:07,216 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:31:07,216 - DEBUG - send_request_headers.complete
+2023-12-17 23:31:07,216 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:31:07,216 - DEBUG - send_request_body.complete
+2023-12-17 23:31:07,216 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:31:30,693 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:31:30 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'23294'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'448549'), (b'x-ratelimit-remaining-tokens_usage_based', b'448549'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'193ms'), (b'x-ratelimit-reset-tokens_usage_based', b'193ms'), (b'x-request-id', b'e59d335d21c1244cee7e8ab0e3d2d877'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374aca6ac99c338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:31:30,694 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:31:30,694 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:31:30,695 - DEBUG - receive_response_body.complete
+2023-12-17 23:31:30,695 - DEBUG - response_closed.started
+2023-12-17 23:31:30,695 - DEBUG - response_closed.complete
+2023-12-17 23:31:30,695 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:31:30,702 - ERROR - An error occurred during parent generation: maximum recursion depth exceeded. Retrying...
+2023-12-17 23:31:30,707 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Contextual Note: In the process of optimizing the algorithm, it\'s crucial to avoid replicating any previously generated algorithms that are already recorded as parents in the GeneticAlgorithmConfig. Each iteration must be unique in terms of its approach, methodology, and results.\n\n        Previous Attempt Details:\n        - Program Code: \n        maximum recursion depth exceeded\n\n        - Error Message: \n        def optimized_bucket_filler(numbers, bucket_limit):\n    # Utilize a binary search tree to hold the sums of buckets\n    class BucketTree:\n        def __init__(self, value, parent=None):\n            self.value = value\n            self.left = None\n            self.right = None\n            self.parent = parent\n            self.numbers = []\n\n        def insert(self, number):\n            new_sum = self.value + number\n            if new_sum <= bucket_limit:\n                if not self.left:\n                    self.left = BucketTree(new_sum, self)\n                    self.left.numbers = self.numbers + [number]\n                    return self.left.numbers, True\n                return self.left.insert(number)\n            else:\n                if not self.right:\n                    self.right = BucketTree(self.value, self)\n                return self.right.insert(number)\n\n    # Initialize the bucket tree with a dummy root node\n    bucket_tree = BucketTree(0)\n    # Store the buckets\n    buckets = []\n\n    # Iterate through numbers\n    for number in sorted(numbers, reverse=True):\n        bucket, _ = bucket_tree.insert(number)\n        if bucket and bucket not in buckets:\n            buckets.append(bucket)\n\n    # Optimize the bucket combinations using a genetic algorithm approach\n    def genetic_optimize(buckets):\n        # Logic for genetic algorithm to optimize bucket combinations\n        pass\n\n    # Optimize the existing buckets\n    buckets = genetic_optimize(buckets)\n\n    return buckets\n\n        Additional Instructions:\n        1. Analyze the previous attempt and identify the reasons for failure.\n        2. Modify the \'optimized_bucket_filler\' function to address the identified issues.\n        3. Ensure the new algorithm is distinct from previous iterations stored in the GeneticAlgorithmConfig.\n        4. Emphasize experimental and innovative mathematical methods to yield a distinct result.\n        5. Cross-check against \'previous_results\' in the GeneticAlgorithmConfig for uniqueness.\n        6. Revise the approach to ensure novelty and innovation if the algorithm mirrors a previous iteration.\n        7. Aim to contribute something fresh and valuable to the overall genetic algorithm optimization process.\n        \n        Objective: Further optimize and enhance an existing algorithm based on inputs from a previous iteration. Develop and refine mathematical approaches for increased efficiency, striking a balance between experimentation and exploitation.\n\n        Parent Inputs:\n        - Previous Program: \n        def optimized_bucket_filler(numbers, bucket_limit):\n    # Sort the numbers in descending order\n    numbers.sort(reverse=True)\n\n    # Initialize buckets list\n    buckets = []\n\n    # Loop through all the numbers\n    for number in numbers:\n        # If the number exceeds the bucket_limit, skip it\n        if number > bucket_limit:\n            continue\n\n        # Try to fit the number in existing buckets\n        placed = False\n        for bucket in buckets:\n            if sum(bucket) + number <= bucket_limit:\n                bucket.append(number)\n                placed = True\n                break\n\n        # If the number didn\'t fit in any existing bucket, create a new one\n        if not placed:\n            buckets.append([number])\n\n    return buckets\n\n        - Previous Mathematical Equation: \n        No specific mathematical equation since the logic is algorithmic and doesn\'t directly translate to a mathematical formula.\n\n        - Previous Pseudocode: \n        FUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets as empty list\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        ENDIF\n        INITIALIZE placed as False\n        FOR each bucket in buckets\n            IF sum of bucket + number is less than or equal to bucket_limit THEN\n                APPEND number to the bucket\n                SET placed to True\n                BREAK the loop\n            ENDIF\n        ENDFOR\n        IF not placed THEN\n            CREATE a new bucket with the number\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n\n        - Previous Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Previous Fitness Score: \n        49.99907019636022\n\n        New Inputs:\n        - numbers: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]\n        - bucket_limit: 10000\n\n        Instructions:\n        1. Analyze the inputs from the \'Parent\' section, which includes the program, mathematical equation, pseudocode, buckets, and fitness score from the previous iteration.\n        2. Develop a new or significantly refined Python function named \'optimized_bucket_filler\', ensuring it does not replicate the previous program but builds upon and optimizes it.\n        3. Innovate in the algorithm\'s approach, introducing new concepts or methods that strike a balance between leveraging the existing solution (\'exploitation\') and exploring new possibilities (\'experimentation\').\n        4. Create or update pseudocode for the new \'optimized_bucket_filler\' function. The pseudocode should clearly outline the innovative logic and steps, demonstrating the advancements made over the previous iteration.\n        5. The function should optimize the number distribution into buckets, adhering to the \'bucket_limit\', with a focus on improving the previous fitness score through innovative methods.\n        6. The final output should include the new function definition, its corresponding pseudocode, and any other enhancements made over the previous iteration.\n        7. If no new pip dependencies are identified, default the \'pip_command\' to \'None\'.\n        8. If external libraries are necessary (such as numpy, scipy, or scikit-learn), clearly list these dependencies in the \'pip_command\' section of the JSON output and import them before the function.\n        9. Ensure adherence to the following output format, formatted as JSON:\n        {\n            "pip_command": "List of pip dependencies (comma-separated) or \'None\' if no dependencies are required",\n            "program_code": "Python function \'optimized_bucket_filler\' definition showcasing innovation and improvement",\n            "pseudocode": "Updated Pseudocode for the innovative \'optimized_bucket_filler\'",\n            "equation": "Refined Mathematical Logic in LaTeX representing the enhanced Program logic"\n        }\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:31:30,709 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:31:30,709 - DEBUG - send_request_headers.complete
+2023-12-17 23:31:30,709 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:31:30,709 - DEBUG - send_request_body.complete
+2023-12-17 23:31:30,709 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:31:59,959 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:32:00 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'29068'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'448177'), (b'x-ratelimit-remaining-tokens_usage_based', b'448177'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'243ms'), (b'x-ratelimit-reset-tokens_usage_based', b'243ms'), (b'x-request-id', b'2593e219a8174df73dc14d74b63a3496'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374ad39781cc338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:31:59,963 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:31:59,964 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:31:59,965 - DEBUG - receive_response_body.complete
+2023-12-17 23:31:59,965 - DEBUG - response_closed.started
+2023-12-17 23:31:59,965 - DEBUG - response_closed.complete
+2023-12-17 23:31:59,965 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:31:59,969 - ERROR - An error occurred during parent generation: unsupported operand type(s) for +: 'int' and 'list'. Retrying...
+2023-12-17 23:31:59,969 - ERROR - Failed to generate a valid parent after 3 attempts for individual 5.
+2023-12-17 23:31:59,975 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Objective: Further optimize and enhance an existing algorithm based on inputs from a previous iteration. Develop and refine mathematical approaches for increased efficiency, striking a balance between experimentation and exploitation.\n\n        Parent Inputs:\n        - Previous Program: \n        def optimized_bucket_filler(numbers, bucket_limit):\n    # Sort the numbers in descending order\n    numbers.sort(reverse=True)\n\n    # Initialize buckets list\n    buckets = []\n\n    # Loop through all the numbers\n    for number in numbers:\n        # If the number exceeds the bucket_limit, skip it\n        if number > bucket_limit:\n            continue\n\n        # Try to fit the number in existing buckets\n        placed = False\n        for bucket in buckets:\n            if sum(bucket) + number <= bucket_limit:\n                bucket.append(number)\n                placed = True\n                break\n\n        # If the number didn\'t fit in any existing bucket, create a new one\n        if not placed:\n            buckets.append([number])\n\n    return buckets\n\n        - Previous Mathematical Equation: \n        No specific mathematical equation since the logic is algorithmic and doesn\'t directly translate to a mathematical formula.\n\n        - Previous Pseudocode: \n        FUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets as empty list\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        ENDIF\n        INITIALIZE placed as False\n        FOR each bucket in buckets\n            IF sum of bucket + number is less than or equal to bucket_limit THEN\n                APPEND number to the bucket\n                SET placed to True\n                BREAK the loop\n            ENDIF\n        ENDFOR\n        IF not placed THEN\n            CREATE a new bucket with the number\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n\n        - Previous Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Previous Fitness Score: \n        49.99907019636022\n\n        New Inputs:\n        - numbers: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]\n        - bucket_limit: 10000\n\n        Instructions:\n        1. Analyze the inputs from the \'Parent\' section, which includes the program, mathematical equation, pseudocode, buckets, and fitness score from the previous iteration.\n        2. Develop a new or significantly refined Python function named \'optimized_bucket_filler\', ensuring it does not replicate the previous program but builds upon and optimizes it.\n        3. Innovate in the algorithm\'s approach, introducing new concepts or methods that strike a balance between leveraging the existing solution (\'exploitation\') and exploring new possibilities (\'experimentation\').\n        4. Create or update pseudocode for the new \'optimized_bucket_filler\' function. The pseudocode should clearly outline the innovative logic and steps, demonstrating the advancements made over the previous iteration.\n        5. The function should optimize the number distribution into buckets, adhering to the \'bucket_limit\', with a focus on improving the previous fitness score through innovative methods.\n        6. The final output should include the new function definition, its corresponding pseudocode, and any other enhancements made over the previous iteration.\n        7. If no new pip dependencies are identified, default the \'pip_command\' to \'None\'.\n        8. If external libraries are necessary (such as numpy, scipy, or scikit-learn), clearly list these dependencies in the \'pip_command\' section of the JSON output and import them before the function.\n        9. Ensure adherence to the following output format, formatted as JSON:\n        {\n            "pip_command": "List of pip dependencies (comma-separated) or \'None\' if no dependencies are required",\n            "program_code": "Python function \'optimized_bucket_filler\' definition showcasing innovation and improvement",\n            "pseudocode": "Updated Pseudocode for the innovative \'optimized_bucket_filler\'",\n            "equation": "Refined Mathematical Logic in LaTeX representing the enhanced Program logic"\n        }\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:31:59,976 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:31:59,977 - DEBUG - send_request_headers.complete
+2023-12-17 23:31:59,977 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:31:59,977 - DEBUG - send_request_body.complete
+2023-12-17 23:31:59,977 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:32:24,012 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:32:24 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'23899'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'448844'), (b'x-ratelimit-remaining-tokens_usage_based', b'448844'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'154ms'), (b'x-ratelimit-reset-tokens_usage_based', b'154ms'), (b'x-request-id', b'b9bcb3ad9b879904caaf020af484be45'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374adf05ef6c338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:32:24,014 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:32:24,014 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:32:24,015 - DEBUG - receive_response_body.complete
+2023-12-17 23:32:24,016 - DEBUG - response_closed.started
+2023-12-17 23:32:24,016 - DEBUG - response_closed.complete
+2023-12-17 23:32:24,016 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:32:24,020 - INFO - ----- Parent 6 Details -----
+2023-12-17 23:32:24,020 - INFO - Program Code:
+
+# New Python function definition for 'optimized_bucket_filler'
+
+def optimized_bucket_filler(numbers, bucket_limit):
+    # Sort the numbers in descending order
+    numbers.sort(reverse=True)
+
+    # Initialize buckets list
+    buckets = [[]]
+
+    # Initialize a list to keep track of the remaining space in buckets
+    remaining_space = [bucket_limit]
+
+    # Loop through all the numbers
+    for number in numbers:
+        # If the number exceeds the bucket_limit, skip it
+        if number > bucket_limit:
+            continue
+
+        # Try to fit the number in a bucket that would be the most 'filled' after addition
+        best_fit_index = -1
+        min_space_left = bucket_limit
+        for i in range(len(buckets)):
+            space_left = remaining_space[i] - number
+            if 0 <= space_left < min_space_left:
+                min_space_left = space_left
+                best_fit_index = i
+
+        # Place the number in the most fitted bucket or create a new one if it did not fit
+        if best_fit_index >= 0:
+            buckets[best_fit_index].append(number)
+            remaining_space[best_fit_index] -= number
+        else:
+            buckets.append([number])
+            remaining_space.append(bucket_limit - number)
+
+    return buckets
+
+2023-12-17 23:32:24,020 - INFO - Equation:
+None
+2023-12-17 23:32:24,020 - INFO - Pseudocode:
+
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    SORT numbers in descending order
+    INITIALIZE buckets with one empty list inside
+    INITIALIZE remaining_space with one 'bucket_limit' value
+    FOR each number in numbers
+        IF number is greater than bucket_limit THEN
+            CONTINUE to next iteration
+        ENDIF
+        INITIALIZE best_fit_index as -1
+        INITIALIZE min_space_left as bucket_limit
+        FOR each index i in the range of buckets length
+            CALCULATE space_left as remaining_space[i] minus number
+            IF space_left is ≥ 0 AND < min_space_left THEN
+                UPDATE min_space_left to space_left
+                UPDATE best_fit_index to i
+            ENDIF
+        ENDFOR
+        IF best_fit_index is ≥ 0 THEN
+            APPEND number to the bucket at best_fit_index
+            SUBTRACT number from remaining_space at best_fit_index
+        ELSE
+            APPEND a new list with number to buckets
+            APPEND 'bucket_limit' minus number to remaining_space
+        ENDIF
+    ENDFOR
+    RETURN buckets
+ENDFUNCTION
+2023-12-17 23:32:24,020 - INFO - Evaluation Results:
+Time Taken: 4.410743713378906e-05
+Memory Used: 0
+Score: 0
+Fitness Score: 49.998676835247394
+Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:32:24,020 - INFO - ----- Crossover Details for Child 1 -----
+2023-12-17 23:32:24,020 - INFO - Elite Parent Details:
+2023-12-17 23:32:24,020 - INFO - Program Code:
+
+# New Python function definition for 'optimized_bucket_filler'
+
+def optimized_bucket_filler(numbers, bucket_limit):
+    # Sort the numbers in descending order
+    numbers.sort(reverse=True)
+
+    # Initialize buckets list
+    buckets = [[]]
+
+    # Initialize a list to keep track of the remaining space in buckets
+    remaining_space = [bucket_limit]
+
+    # Loop through all the numbers
+    for number in numbers:
+        # If the number exceeds the bucket_limit, skip it
+        if number > bucket_limit:
+            continue
+
+        # Try to fit the number in a bucket that would be the most 'filled' after addition
+        best_fit_index = -1
+        min_space_left = bucket_limit
+        for i in range(len(buckets)):
+            space_left = remaining_space[i] - number
+            if 0 <= space_left < min_space_left:
+                min_space_left = space_left
+                best_fit_index = i
+
+        # Place the number in the most fitted bucket or create a new one if it did not fit
+        if best_fit_index >= 0:
+            buckets[best_fit_index].append(number)
+            remaining_space[best_fit_index] -= number
+        else:
+            buckets.append([number])
+            remaining_space.append(bucket_limit - number)
+
+    return buckets
+
+2023-12-17 23:32:24,020 - INFO - Equation:
+None
+2023-12-17 23:32:24,020 - INFO - Pseudocode:
+
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    SORT numbers in descending order
+    INITIALIZE buckets with one empty list inside
+    INITIALIZE remaining_space with one 'bucket_limit' value
+    FOR each number in numbers
+        IF number is greater than bucket_limit THEN
+            CONTINUE to next iteration
+        ENDIF
+        INITIALIZE best_fit_index as -1
+        INITIALIZE min_space_left as bucket_limit
+        FOR each index i in the range of buckets length
+            CALCULATE space_left as remaining_space[i] minus number
+            IF space_left is ≥ 0 AND < min_space_left THEN
+                UPDATE min_space_left to space_left
+                UPDATE best_fit_index to i
+            ENDIF
+        ENDFOR
+        IF best_fit_index is ≥ 0 THEN
+            APPEND number to the bucket at best_fit_index
+            SUBTRACT number from remaining_space at best_fit_index
+        ELSE
+            APPEND a new list with number to buckets
+            APPEND 'bucket_limit' minus number to remaining_space
+        ENDIF
+    ENDFOR
+    RETURN buckets
+ENDFUNCTION
+2023-12-17 23:32:24,020 - INFO - Evaluation Results:
+Time Taken: 4.410743713378906e-05
+Memory Used: 0
+Score: 0
+Fitness Score: 49.998676835247394
+Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:32:24,020 - INFO - Tournament Parent Details:
+2023-12-17 23:32:24,020 - INFO - Program Code:
+
+# New Python function definition for 'optimized_bucket_filler'
+
+def optimized_bucket_filler(numbers, bucket_limit):
+    # Sort the numbers in descending order
+    numbers.sort(reverse=True)
+
+    # Initialize buckets list
+    buckets = [[]]
+
+    # Initialize a list to keep track of the remaining space in buckets
+    remaining_space = [bucket_limit]
+
+    # Loop through all the numbers
+    for number in numbers:
+        # If the number exceeds the bucket_limit, skip it
+        if number > bucket_limit:
+            continue
+
+        # Try to fit the number in a bucket that would be the most 'filled' after addition
+        best_fit_index = -1
+        min_space_left = bucket_limit
+        for i in range(len(buckets)):
+            space_left = remaining_space[i] - number
+            if 0 <= space_left < min_space_left:
+                min_space_left = space_left
+                best_fit_index = i
+
+        # Place the number in the most fitted bucket or create a new one if it did not fit
+        if best_fit_index >= 0:
+            buckets[best_fit_index].append(number)
+            remaining_space[best_fit_index] -= number
+        else:
+            buckets.append([number])
+            remaining_space.append(bucket_limit - number)
+
+    return buckets
+
+2023-12-17 23:32:24,020 - INFO - Equation:
+None
+2023-12-17 23:32:24,021 - INFO - Pseudocode:
+
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    SORT numbers in descending order
+    INITIALIZE buckets with one empty list inside
+    INITIALIZE remaining_space with one 'bucket_limit' value
+    FOR each number in numbers
+        IF number is greater than bucket_limit THEN
+            CONTINUE to next iteration
+        ENDIF
+        INITIALIZE best_fit_index as -1
+        INITIALIZE min_space_left as bucket_limit
+        FOR each index i in the range of buckets length
+            CALCULATE space_left as remaining_space[i] minus number
+            IF space_left is ≥ 0 AND < min_space_left THEN
+                UPDATE min_space_left to space_left
+                UPDATE best_fit_index to i
+            ENDIF
+        ENDFOR
+        IF best_fit_index is ≥ 0 THEN
+            APPEND number to the bucket at best_fit_index
+            SUBTRACT number from remaining_space at best_fit_index
+        ELSE
+            APPEND a new list with number to buckets
+            APPEND 'bucket_limit' minus number to remaining_space
+        ENDIF
+    ENDFOR
+    RETURN buckets
+ENDFUNCTION
+2023-12-17 23:32:24,021 - INFO - Evaluation Results:
+Time Taken: 4.410743713378906e-05
+Memory Used: 0
+Score: 0
+Fitness Score: 49.998676835247394
+Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:32:24,026 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Objective: Employ a genetic algorithm approach to combine features from two parent algorithms, creating an enhanced child algorithm that exhibits improved efficiency and innovation.\n\n        Parent 1 Inputs:\n        - Program: \n        \n# New Python function definition for \'optimized_bucket_filler\'\n\ndef optimized_bucket_filler(numbers, bucket_limit):\n    # Sort the numbers in descending order\n    numbers.sort(reverse=True)\n\n    # Initialize buckets list\n    buckets = [[]]\n\n    # Initialize a list to keep track of the remaining space in buckets\n    remaining_space = [bucket_limit]\n\n    # Loop through all the numbers\n    for number in numbers:\n        # If the number exceeds the bucket_limit, skip it\n        if number > bucket_limit:\n            continue\n\n        # Try to fit the number in a bucket that would be the most \'filled\' after addition\n        best_fit_index = -1\n        min_space_left = bucket_limit\n        for i in range(len(buckets)):\n            space_left = remaining_space[i] - number\n            if 0 <= space_left < min_space_left:\n                min_space_left = space_left\n                best_fit_index = i\n\n        # Place the number in the most fitted bucket or create a new one if it did not fit\n        if best_fit_index >= 0:\n            buckets[best_fit_index].append(number)\n            remaining_space[best_fit_index] -= number\n        else:\n            buckets.append([number])\n            remaining_space.append(bucket_limit - number)\n\n    return buckets\n\n\n        - Mathematical Equation: \n        None\n\n        - Pseudocode: \n        \nFUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets with one empty list inside\n    INITIALIZE remaining_space with one \'bucket_limit\' value\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        ENDIF\n        INITIALIZE best_fit_index as -1\n        INITIALIZE min_space_left as bucket_limit\n        FOR each index i in the range of buckets length\n            CALCULATE space_left as remaining_space[i] minus number\n            IF space_left is ≥ 0 AND < min_space_left THEN\n                UPDATE min_space_left to space_left\n                UPDATE best_fit_index to i\n            ENDIF\n        ENDFOR\n        IF best_fit_index is ≥ 0 THEN\n            APPEND number to the bucket at best_fit_index\n            SUBTRACT number from remaining_space at best_fit_index\n        ELSE\n            APPEND a new list with number to buckets\n            APPEND \'bucket_limit\' minus number to remaining_space\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n\n        - Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Fitness Score: \n        49.998676835247394\n\n        Parent 2 Inputs:\n        - Program: \n        \n# New Python function definition for \'optimized_bucket_filler\'\n\ndef optimized_bucket_filler(numbers, bucket_limit):\n    # Sort the numbers in descending order\n    numbers.sort(reverse=True)\n\n    # Initialize buckets list\n    buckets = [[]]\n\n    # Initialize a list to keep track of the remaining space in buckets\n    remaining_space = [bucket_limit]\n\n    # Loop through all the numbers\n    for number in numbers:\n        # If the number exceeds the bucket_limit, skip it\n        if number > bucket_limit:\n            continue\n\n        # Try to fit the number in a bucket that would be the most \'filled\' after addition\n        best_fit_index = -1\n        min_space_left = bucket_limit\n        for i in range(len(buckets)):\n            space_left = remaining_space[i] - number\n            if 0 <= space_left < min_space_left:\n                min_space_left = space_left\n                best_fit_index = i\n\n        # Place the number in the most fitted bucket or create a new one if it did not fit\n        if best_fit_index >= 0:\n            buckets[best_fit_index].append(number)\n            remaining_space[best_fit_index] -= number\n        else:\n            buckets.append([number])\n            remaining_space.append(bucket_limit - number)\n\n    return buckets\n\n\n        - Mathematical Equation: \n        None\n\n        - Pseudocode: \n        \nFUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets with one empty list inside\n    INITIALIZE remaining_space with one \'bucket_limit\' value\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        ENDIF\n        INITIALIZE best_fit_index as -1\n        INITIALIZE min_space_left as bucket_limit\n        FOR each index i in the range of buckets length\n            CALCULATE space_left as remaining_space[i] minus number\n            IF space_left is ≥ 0 AND < min_space_left THEN\n                UPDATE min_space_left to space_left\n                UPDATE best_fit_index to i\n            ENDIF\n        ENDFOR\n        IF best_fit_index is ≥ 0 THEN\n            APPEND number to the bucket at best_fit_index\n            SUBTRACT number from remaining_space at best_fit_index\n        ELSE\n            APPEND a new list with number to buckets\n            APPEND \'bucket_limit\' minus number to remaining_space\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n\n        - Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Fitness Score: \n        49.998676835247394\n\n        New Inputs:\n        - numbers: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]\n        - bucket_limit: 10000\n\n        Instructions:\n        1. Develop a new or significantly refined Python function named \'optimized_bucket_filler\', building upon and optimizing the previous program.\n        2. Ensure the new function innovatively approaches the algorithm\'s task and safely handles list manipulations to avoid errors like \'IndexError\'.\n        3. Create or update pseudocode for the new \'optimized_bucket_filler\' function, including handling of edge cases.\n        4. The function should improve the number distribution into buckets, focusing on improving the previous fitness score.\n        5. The final output should include the new function definition, its corresponding pseudocode, and any enhancements made over the previous iteration.\n        6. Default the \'pip_command\' to \'None\' if no new dependencies are identified.\n        7. If external libraries are necessary (such as numpy, scipy, or scikit-learn), clearly list these dependencies in the \'pip_command\' section of the JSON output and import them before the function.\n        8. Ensure adherence to the following output format, formatted as JSON:\n           {\n               "pip_command": "List of pip dependencies (comma-separated) or \'None\' if no dependencies are required",\n               "program_code": "Python function \'optimized_bucket_filler\' definition showcasing innovation and improvement",\n               "pseudocode": "Updated Pseudocode for the innovative \'optimized_bucket_filler\'",\n               "equation": "Refined Mathematical Logic in LaTeX representing the enhanced Program logic"\n           }\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:32:24,028 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:32:24,028 - DEBUG - send_request_headers.complete
+2023-12-17 23:32:24,028 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:32:24,029 - DEBUG - send_request_body.complete
+2023-12-17 23:32:24,029 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:32:48,622 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:32:48 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'24465'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'448089'), (b'x-ratelimit-remaining-tokens_usage_based', b'448089'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'254ms'), (b'x-ratelimit-reset-tokens_usage_based', b'254ms'), (b'x-request-id', b'b5e5e0d45c3f1beb102a237c14f1f331'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374ae86ba0ec338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:32:48,623 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:32:48,624 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:32:48,624 - DEBUG - receive_response_body.complete
+2023-12-17 23:32:48,625 - DEBUG - response_closed.started
+2023-12-17 23:32:48,625 - DEBUG - response_closed.complete
+2023-12-17 23:32:48,625 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:32:48,629 - INFO - ----- Child Details -----
+2023-12-17 23:32:48,629 - INFO - Program Code:
+
+# Enhanced Python function definition for 'optimized_bucket_filler'
+
+def optimized_bucket_filler(numbers, bucket_limit):
+    # Skip algorithm if there are no numbers or bucket_limit is not positive
+    if not numbers or bucket_limit <= 0:
+        return []
+
+    # Sort numbers in descending order once, reducing the number of sorts needed
+    numbers.sort(reverse=True)
+
+    # Initialize the buckets list
+    buckets = [[]]
+    remaining_space = [bucket_limit]  # Keep track of the remaining space in buckets
+
+    for number in numbers:
+        # Place number in the most appropriate bucket
+        for i, space in enumerate(remaining_space):
+            if number <= space:
+                buckets[i].append(number)
+                remaining_space[i] -= number
+                break
+        else:  # If number does not fit, create a new bucket
+            buckets.append([number])
+            remaining_space.append(bucket_limit - number)
+    return buckets
+
+2023-12-17 23:32:48,629 - INFO - Equation:
+None
+2023-12-17 23:32:48,629 - INFO - Pseudocode:
+
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    IF numbers is empty OR bucket_limit ≤ 0 THEN
+        RETURN empty list
+    ENDIF
+
+    SORT numbers in descending order
+    INITIALIZE buckets with one empty list
+    INITIALIZE remaining_space with one bucket_limit value
+    FOR each number in numbers
+        FOR each index i and space in remaining_space
+            IF number ≤ space THEN
+                APPEND number to buckets[i]
+                SUBTRACT number from remaining_space[i]
+                BREAK the loop
+            ENDIF
+        ENDFOR
+        IF number was not placed THEN
+            APPEND new list with number to buckets
+            APPEND bucket_limit minus number to remaining_space
+        ENDIF
+    ENDFOR
+    RETURN buckets
+ENDFUNCTION
+
+2023-12-17 23:32:48,629 - INFO - Evaluation Results:
+Time Taken: 2.8133392333984375e-05
+Memory Used: 0
+Score: 0
+Fitness Score: 49.999156021973945
+Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:32:48,629 - INFO - ----- Crossover Details for Child 2 -----
+2023-12-17 23:32:48,629 - INFO - Elite Parent Details:
+2023-12-17 23:32:48,630 - INFO - Program Code:
+def optimized_bucket_filler(numbers, bucket_limit):
+    # Sort numbers and initialize variables
+    numbers.sort(reverse=True)
+    buckets = []
+    remaining_space = []
+
+    # Create initial buckets with the first number
+    for number in numbers:
+        # Number exceeds bucket limit check
+        if number > bucket_limit:
+            continue
+
+        # Try to place number in the bucket with the most suitable space
+        best_fit_idx = -1
+        min_space_left = float('inf')
+        for i, space in enumerate(remaining_space):
+            if space >= number and space - number < min_space_left:
+                min_space_left = space - number
+                best_fit_idx = i
+
+        # Place number in the best bucket or create a new one
+        if best_fit_idx != -1:
+            buckets[best_fit_idx].append(number)
+            remaining_space[best_fit_idx] -= number
+        else:
+            buckets.append([number])
+            remaining_space.append(bucket_limit - number)
+
+    return buckets
+2023-12-17 23:32:48,630 - INFO - Equation:
+Let \text{{best_fit}} be the index of the bucket that minimizes \text{{remaining_space}}_i - \text{{number}}, \text{{such that}} \text{{remaining_space}}_i \geq \text{{number}}. \text{{If no such bucket exists, create a new one.}}
+2023-12-17 23:32:48,630 - INFO - Pseudocode:
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    SORT numbers in descending order
+    INITIALIZE buckets and remaining_space as empty lists
+    FOR each number in numbers
+        IF number is greater than bucket_limit THEN
+            CONTINUE to next iteration
+        END IF
+        INITIALIZE best_fit_idx as -1
+        INITIALIZE min_space_left as infinity
+        FOR each index, space in remaining_space
+            IF space >= number AND space - number < min_space_left THEN
+                SET min_space_left to space - number
+                SET best_fit_idx to current index
+            END IF
+        END FOR
+        IF best_fit_idx is not -1 THEN
+            APPEND number to buckets at best_fit_idx
+            SUBTRACT number from remaining_space at best_fit_idx
+        ELSE
+            CREATE a new bucket with number
+            ADD bucket_limit - number to remaining_space
+        END IF
+    END FOR
+    RETURN buckets
+END FUNCTION
+2023-12-17 23:32:48,630 - INFO - Evaluation Results:
+Time Taken: 4.601478576660156e-05
+Memory Used: 0
+Score: 0
+Fitness Score: 49.99861961994489
+Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:32:48,630 - INFO - Tournament Parent Details:
+2023-12-17 23:32:48,630 - INFO - Program Code:
+
+# New Python function definition for 'optimized_bucket_filler'
+
+def optimized_bucket_filler(numbers, bucket_limit):
+    # Sort the numbers in descending order
+    numbers.sort(reverse=True)
+
+    # Initialize buckets list
+    buckets = [[]]
+
+    # Initialize a list to keep track of the remaining space in buckets
+    remaining_space = [bucket_limit]
+
+    # Loop through all the numbers
+    for number in numbers:
+        # If the number exceeds the bucket_limit, skip it
+        if number > bucket_limit:
+            continue
+
+        # Try to fit the number in a bucket that would be the most 'filled' after addition
+        best_fit_index = -1
+        min_space_left = bucket_limit
+        for i in range(len(buckets)):
+            space_left = remaining_space[i] - number
+            if 0 <= space_left < min_space_left:
+                min_space_left = space_left
+                best_fit_index = i
+
+        # Place the number in the most fitted bucket or create a new one if it did not fit
+        if best_fit_index >= 0:
+            buckets[best_fit_index].append(number)
+            remaining_space[best_fit_index] -= number
+        else:
+            buckets.append([number])
+            remaining_space.append(bucket_limit - number)
+
+    return buckets
+
+2023-12-17 23:32:48,630 - INFO - Equation:
+None
+2023-12-17 23:32:48,630 - INFO - Pseudocode:
+
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    SORT numbers in descending order
+    INITIALIZE buckets with one empty list inside
+    INITIALIZE remaining_space with one 'bucket_limit' value
+    FOR each number in numbers
+        IF number is greater than bucket_limit THEN
+            CONTINUE to next iteration
+        ENDIF
+        INITIALIZE best_fit_index as -1
+        INITIALIZE min_space_left as bucket_limit
+        FOR each index i in the range of buckets length
+            CALCULATE space_left as remaining_space[i] minus number
+            IF space_left is ≥ 0 AND < min_space_left THEN
+                UPDATE min_space_left to space_left
+                UPDATE best_fit_index to i
+            ENDIF
+        ENDFOR
+        IF best_fit_index is ≥ 0 THEN
+            APPEND number to the bucket at best_fit_index
+            SUBTRACT number from remaining_space at best_fit_index
+        ELSE
+            APPEND a new list with number to buckets
+            APPEND 'bucket_limit' minus number to remaining_space
+        ENDIF
+    ENDFOR
+    RETURN buckets
+ENDFUNCTION
+2023-12-17 23:32:48,630 - INFO - Evaluation Results:
+Time Taken: 4.410743713378906e-05
+Memory Used: 0
+Score: 0
+Fitness Score: 49.998676835247394
+Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:32:48,636 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'json_data': {'messages': [{'role': 'system', 'content': 'You are a helpful assistant designed to output JSON.'}, {'role': 'user', 'content': '\n        Objective: Employ a genetic algorithm approach to combine features from two parent algorithms, creating an enhanced child algorithm that exhibits improved efficiency and innovation.\n\n        Parent 1 Inputs:\n        - Program: \n        def optimized_bucket_filler(numbers, bucket_limit):\n    # Sort numbers and initialize variables\n    numbers.sort(reverse=True)\n    buckets = []\n    remaining_space = []\n\n    # Create initial buckets with the first number\n    for number in numbers:\n        # Number exceeds bucket limit check\n        if number > bucket_limit:\n            continue\n\n        # Try to place number in the bucket with the most suitable space\n        best_fit_idx = -1\n        min_space_left = float(\'inf\')\n        for i, space in enumerate(remaining_space):\n            if space >= number and space - number < min_space_left:\n                min_space_left = space - number\n                best_fit_idx = i\n\n        # Place number in the best bucket or create a new one\n        if best_fit_idx != -1:\n            buckets[best_fit_idx].append(number)\n            remaining_space[best_fit_idx] -= number\n        else:\n            buckets.append([number])\n            remaining_space.append(bucket_limit - number)\n\n    return buckets\n\n        - Mathematical Equation: \n        Let \\text{{best_fit}} be the index of the bucket that minimizes \\text{{remaining_space}}_i - \\text{{number}}, \\text{{such that}} \\text{{remaining_space}}_i \\geq \\text{{number}}. \\text{{If no such bucket exists, create a new one.}}\n\n        - Pseudocode: \n        FUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets and remaining_space as empty lists\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        END IF\n        INITIALIZE best_fit_idx as -1\n        INITIALIZE min_space_left as infinity\n        FOR each index, space in remaining_space\n            IF space >= number AND space - number < min_space_left THEN\n                SET min_space_left to space - number\n                SET best_fit_idx to current index\n            END IF\n        END FOR\n        IF best_fit_idx is not -1 THEN\n            APPEND number to buckets at best_fit_idx\n            SUBTRACT number from remaining_space at best_fit_idx\n        ELSE\n            CREATE a new bucket with number\n            ADD bucket_limit - number to remaining_space\n        END IF\n    END FOR\n    RETURN buckets\nEND FUNCTION\n\n        - Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Fitness Score: \n        49.99861961994489\n\n        Parent 2 Inputs:\n        - Program: \n        \n# New Python function definition for \'optimized_bucket_filler\'\n\ndef optimized_bucket_filler(numbers, bucket_limit):\n    # Sort the numbers in descending order\n    numbers.sort(reverse=True)\n\n    # Initialize buckets list\n    buckets = [[]]\n\n    # Initialize a list to keep track of the remaining space in buckets\n    remaining_space = [bucket_limit]\n\n    # Loop through all the numbers\n    for number in numbers:\n        # If the number exceeds the bucket_limit, skip it\n        if number > bucket_limit:\n            continue\n\n        # Try to fit the number in a bucket that would be the most \'filled\' after addition\n        best_fit_index = -1\n        min_space_left = bucket_limit\n        for i in range(len(buckets)):\n            space_left = remaining_space[i] - number\n            if 0 <= space_left < min_space_left:\n                min_space_left = space_left\n                best_fit_index = i\n\n        # Place the number in the most fitted bucket or create a new one if it did not fit\n        if best_fit_index >= 0:\n            buckets[best_fit_index].append(number)\n            remaining_space[best_fit_index] -= number\n        else:\n            buckets.append([number])\n            remaining_space.append(bucket_limit - number)\n\n    return buckets\n\n\n        - Mathematical Equation: \n        None\n\n        - Pseudocode: \n        \nFUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets with one empty list inside\n    INITIALIZE remaining_space with one \'bucket_limit\' value\n    FOR each number in numbers\n        IF number is greater than bucket_limit THEN\n            CONTINUE to next iteration\n        ENDIF\n        INITIALIZE best_fit_index as -1\n        INITIALIZE min_space_left as bucket_limit\n        FOR each index i in the range of buckets length\n            CALCULATE space_left as remaining_space[i] minus number\n            IF space_left is ≥ 0 AND < min_space_left THEN\n                UPDATE min_space_left to space_left\n                UPDATE best_fit_index to i\n            ENDIF\n        ENDFOR\n        IF best_fit_index is ≥ 0 THEN\n            APPEND number to the bucket at best_fit_index\n            SUBTRACT number from remaining_space at best_fit_index\n        ELSE\n            APPEND a new list with number to buckets\n            APPEND \'bucket_limit\' minus number to remaining_space\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n\n        - Buckets: \n        [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]\n\n        - Fitness Score: \n        49.998676835247394\n\n        New Inputs:\n        - numbers: [734, 238, 51, 412, 992, 94, 132, 284, 20, 981, 325, 621, 219, 803, 116, 543, 191, 833, 572, 462, 385, 50, 787, 963, 881, 106, 624, 356, 468, 877, 111, 345, 95, 710, 189]\n        - bucket_limit: 10000\n\n        Instructions:\n        1. Develop a new or significantly refined Python function named \'optimized_bucket_filler\', building upon and optimizing the previous program.\n        2. Ensure the new function innovatively approaches the algorithm\'s task and safely handles list manipulations to avoid errors like \'IndexError\'.\n        3. Create or update pseudocode for the new \'optimized_bucket_filler\' function, including handling of edge cases.\n        4. The function should improve the number distribution into buckets, focusing on improving the previous fitness score.\n        5. The final output should include the new function definition, its corresponding pseudocode, and any enhancements made over the previous iteration.\n        6. Default the \'pip_command\' to \'None\' if no new dependencies are identified.\n        7. If external libraries are necessary (such as numpy, scipy, or scikit-learn), clearly list these dependencies in the \'pip_command\' section of the JSON output and import them before the function.\n        8. Ensure adherence to the following output format, formatted as JSON:\n           {\n               "pip_command": "List of pip dependencies (comma-separated) or \'None\' if no dependencies are required",\n               "program_code": "Python function \'optimized_bucket_filler\' definition showcasing innovation and improvement",\n               "pseudocode": "Updated Pseudocode for the innovative \'optimized_bucket_filler\'",\n               "equation": "Refined Mathematical Logic in LaTeX representing the enhanced Program logic"\n           }\n        '}], 'model': 'gpt-4-1106-preview', 'response_format': {'type': 'json_object'}}}
+2023-12-17 23:32:48,637 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2023-12-17 23:32:48,637 - DEBUG - send_request_headers.complete
+2023-12-17 23:32:48,638 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2023-12-17 23:32:48,638 - DEBUG - send_request_body.complete
+2023-12-17 23:32:48,638 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2023-12-17 23:33:04,708 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 18 Dec 2023 04:33:04 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'access-control-allow-origin', b'*'), (b'Cache-Control', b'no-cache, must-revalidate'), (b'openai-model', b'gpt-4-1106-preview'), (b'openai-organization', b'volkopat'), (b'openai-processing-ms', b'15885'), (b'openai-version', b'2020-10-01'), (b'strict-transport-security', b'max-age=15724800; includeSubDomains'), (b'x-ratelimit-limit-requests', b'10000'), (b'x-ratelimit-limit-tokens', b'450000'), (b'x-ratelimit-limit-tokens_usage_based', b'450000'), (b'x-ratelimit-remaining-requests', b'9999'), (b'x-ratelimit-remaining-tokens', b'448131'), (b'x-ratelimit-remaining-tokens_usage_based', b'448131'), (b'x-ratelimit-reset-requests', b'6ms'), (b'x-ratelimit-reset-tokens', b'249ms'), (b'x-ratelimit-reset-tokens_usage_based', b'249ms'), (b'x-request-id', b'ddda48d331819cc834fd9d8c191ecc59'), (b'CF-Cache-Status', b'DYNAMIC'), (b'Server', b'cloudflare'), (b'CF-RAY', b'8374af208de0c338-EWR'), (b'Content-Encoding', b'gzip'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2023-12-17 23:33:04,710 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2023-12-17 23:33:04,711 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2023-12-17 23:33:04,711 - DEBUG - receive_response_body.complete
+2023-12-17 23:33:04,711 - DEBUG - response_closed.started
+2023-12-17 23:33:04,712 - DEBUG - response_closed.complete
+2023-12-17 23:33:04,712 - DEBUG - HTTP Request: POST https://api.openai.com/v1/chat/completions "200 OK"
+2023-12-17 23:33:04,717 - INFO - ----- Child Details -----
+2023-12-17 23:33:04,717 - INFO - Program Code:
+def optimized_bucket_filler(numbers, bucket_limit):
+    numbers.sort(reverse=True)
+    buckets = []
+    remaining_space = []
+
+    for number in numbers:
+        if number > bucket_limit:
+            continue
+
+        placed = False
+        if not buckets:
+            buckets.append([number])
+            remaining_space.append(bucket_limit - number)
+            continue
+        for i, space in enumerate(remaining_space):
+            if space >= number:
+                buckets[i].append(number)
+                remaining_space[i] -= number
+                placed = True
+                break
+        if not placed:
+            buckets.append([number])
+            remaining_space.append(bucket_limit - number)
+    return buckets
+2023-12-17 23:33:04,717 - INFO - Equation:
+None
+2023-12-17 23:33:04,717 - INFO - Pseudocode:
+FUNCTION optimized_bucket_filler(numbers, bucket_limit)
+    SORT numbers in descending order
+    INITIALIZE buckets as empty list
+    INITIALIZE remaining_space as empty list
+    FOR each number in numbers
+        IF number > bucket_limit THEN
+            CONTINUE
+        END IF
+        INITIALIZE placed as False
+        IF buckets is empty THEN
+            APPEND a new list with number to buckets
+            APPEND bucket_limit - number to remaining_space
+            CONTINUE
+        END IF
+        FOR each index i and space in remaining_space
+            IF space >= number THEN
+                APPEND number to buckets[i]
+                SUBTRACT number from remaining_space[i]
+                SET placed to True
+                BREAK
+            END IF
+        END FOR
+        IF not placed THEN
+            APPEND a new list with number to buckets
+            APPEND bucket_limit - number to remaining_space
+        END IF
+    END FOR
+    RETURN buckets
+END FUNCTION
+2023-12-17 23:33:04,717 - INFO - Evaluation Results:
+Time Taken: 4.291534423828125e-05
+Memory Used: 0
+Score: 0
+Fitness Score: 49.99871259492228
+Buckets: [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]
+2023-12-17 23:33:04,717 - INFO - Top Children Selected for Next Generation: [{'program_code': "\n# Enhanced Python function definition for 'optimized_bucket_filler'\n\ndef optimized_bucket_filler(numbers, bucket_limit):\n    # Skip algorithm if there are no numbers or bucket_limit is not positive\n    if not numbers or bucket_limit <= 0:\n        return []\n\n    # Sort numbers in descending order once, reducing the number of sorts needed\n    numbers.sort(reverse=True)\n\n    # Initialize the buckets list\n    buckets = [[]]\n    remaining_space = [bucket_limit]  # Keep track of the remaining space in buckets\n\n    for number in numbers:\n        # Place number in the most appropriate bucket\n        for i, space in enumerate(remaining_space):\n            if number <= space:\n                buckets[i].append(number)\n                remaining_space[i] -= number\n                break\n        else:  # If number does not fit, create a new bucket\n            buckets.append([number])\n            remaining_space.append(bucket_limit - number)\n    return buckets\n", 'evaluation_results': {'time_taken': 2.8133392333984375e-05, 'memory_used': 0, 'score': 0, 'fitness_score': 49.999156021973945, 'buckets': [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]}, 'equation': 'None', 'pseudocode': '\nFUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    IF numbers is empty OR bucket_limit ≤ 0 THEN\n        RETURN empty list\n    ENDIF\n\n    SORT numbers in descending order\n    INITIALIZE buckets with one empty list\n    INITIALIZE remaining_space with one bucket_limit value\n    FOR each number in numbers\n        FOR each index i and space in remaining_space\n            IF number ≤ space THEN\n                APPEND number to buckets[i]\n                SUBTRACT number from remaining_space[i]\n                BREAK the loop\n            ENDIF\n        ENDFOR\n        IF number was not placed THEN\n            APPEND new list with number to buckets\n            APPEND bucket_limit minus number to remaining_space\n        ENDIF\n    ENDFOR\n    RETURN buckets\nENDFUNCTION\n'}, {'program_code': 'def optimized_bucket_filler(numbers, bucket_limit):\n    numbers.sort(reverse=True)\n    buckets = []\n    remaining_space = []\n\n    for number in numbers:\n        if number > bucket_limit:\n            continue\n\n        placed = False\n        if not buckets:\n            buckets.append([number])\n            remaining_space.append(bucket_limit - number)\n            continue\n        for i, space in enumerate(remaining_space):\n            if space >= number:\n                buckets[i].append(number)\n                remaining_space[i] -= number\n                placed = True\n                break\n        if not placed:\n            buckets.append([number])\n            remaining_space.append(bucket_limit - number)\n    return buckets', 'evaluation_results': {'time_taken': 4.291534423828125e-05, 'memory_used': 0, 'score': 0, 'fitness_score': 49.99871259492228, 'buckets': [[992, 981, 963, 881, 877, 833, 803, 787, 734, 710, 624, 621, 191], [572, 543, 468, 462, 412, 385, 356, 345, 325, 284, 238, 219, 189, 132, 116, 111, 106, 95, 94, 51, 50, 20]]}, 'equation': 'None', 'pseudocode': 'FUNCTION optimized_bucket_filler(numbers, bucket_limit)\n    SORT numbers in descending order\n    INITIALIZE buckets as empty list\n    INITIALIZE remaining_space as empty list\n    FOR each number in numbers\n        IF number > bucket_limit THEN\n            CONTINUE\n        END IF\n        INITIALIZE placed as False\n        IF buckets is empty THEN\n            APPEND a new list with number to buckets\n            APPEND bucket_limit - number to remaining_space\n            CONTINUE\n        END IF\n        FOR each index i and space in remaining_space\n            IF space >= number THEN\n                APPEND number to buckets[i]\n                SUBTRACT number from remaining_space[i]\n                SET placed to True\n                BREAK\n            END IF\n        END FOR\n        IF not placed THEN\n            APPEND a new list with number to buckets\n            APPEND bucket_limit - number to remaining_space\n        END IF\n    END FOR\n    RETURN buckets\nEND FUNCTION'}]

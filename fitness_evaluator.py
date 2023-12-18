@@ -8,24 +8,18 @@ class FitnessEvaluator:
     def execute_program(program_code):
         try:
             local_scope = {}
-            exec(program_code, globals(), local_scope)
+            lines = program_code.split('\n')
+            import_lines = [line for line in lines if line.startswith('import') or line.startswith('from')]
+            other_lines = [line for line in lines if not (line.startswith('import') or line.startswith('from'))]
+            import_code = '\n'.join(import_lines)
+            other_code = '\n'.join(other_lines)
+            exec(import_code, globals(), local_scope)
+            exec(other_code, globals(), local_scope)
             return local_scope.get('optimized_bucket_filler')
-        except NameError as e:
-            match = re.search(r"name '(\w+)' is not defined", str(e))
-            if match:
-                missing_module = match.group(1)
-                full_code = f"import {missing_module}\n" + program_code
-                try:
-                    exec(full_code, globals(), local_scope)
-                    return local_scope.get('optimized_bucket_filler')
-                except Exception as e_inner:
-                    print(f"Error executing program after adding import: {e_inner}")
-            else:
-                print(f"Error executing program: {e}")
+
         except Exception as e:
             print(f"Error executing program: {e}")
-
-        return None
+            return None
 
     @staticmethod
     def measure_time(func, *args, **kwargs):
