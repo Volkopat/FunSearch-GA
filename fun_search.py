@@ -244,6 +244,40 @@ def generate_children(prompt_manager, client, fitness_evaluator, parents, number
     logging.info(f"Top Children Selected for Next Generation: {top_children}")
     return top_children
 
+def mutate_and_update_population(prompt_manager, client, fitness_evaluator, ga_config, parents, children, numberList, bucketSize):
+    mutated_children = []
+
+    for child in children:
+        mutation_prompt = prompt_manager.get_mutation_prompt(
+            child['program_code'], child['equation'], child['pseudocode'],
+            child['evaluation_results']['buckets'], child['evaluation_results']['fitness_score'],
+            numberList, bucketSize
+        )
+        response = query_openai_api(client, mutation_prompt)
+        response_data = ast.literal_eval(response)
+
+        if response_data.get('pip_command') and response_data['pip_command'] != "None":
+            install_packages(response_data['pip_command'])
+
+        mutated_child_results = fitness_evaluator.evaluate_algorithm(
+            response_data['program_code'], numberList, bucketSize, weights={'time': 0.3, 'memory': 0.2, 'score': 0.5}
+        )
+
+        mutated_child_info = {
+            'program_code': response_data.get('program_code'),
+            'evaluation_results': mutated_child_results,
+            'equation': response_data.get('equation'),
+            'pseudocode': response_data.get('pseudocode')
+        }
+        mutated_children.append(mutated_child_info)
+
+    combined_population = parents + mutated_children
+    combined_population.sort(key=lambda x: x['evaluation_results']['fitness_score'], reverse=True)
+
+    new_population = combined_population[:ga_config.population_size]
+
+    return new_population
+
 def main():
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
     os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
@@ -251,14 +285,23 @@ def main():
     client = initialize_openai_client()
     prompt_manager = PromptManager()
     fitness_evaluator = FitnessEvaluator()
-    ga_config = GeneticAlgorithmConfig()
+    ga_config = GeneticAlgorithmConfig(generations=1, population_size=6)
 
     try:
         master_program_details = query_and_log_initial_data(prompt_manager, client, fitness_evaluator, ga_config)
-        parents = generate_parents(prompt_manager, client, fitness_evaluator, ga_config, master_program_details)
-        top_children = generate_children(prompt_manager, client, fitness_evaluator, parents, master_program_details['numberList'], master_program_details['bucketSize'])
+        population = generate_parents(prompt_manager, client, fitness_evaluator, ga_config, master_program_details)
 
-        logging.info(f"Top Children Selected for Next Generation: {top_children}")
+        for _ in range(ga_config.generations):
+            children = generate_children(prompt_manager, client, fitness_evaluator, population, master_program_details['numberList'], master_program_details['bucketSize'])
+            population = mutate_and_update_population(prompt_manager, client, fitness_evaluator, ga_config, population, children, master_program_details['numberList'], master_program_details['bucketSize'])
+
+        best_performer = max(population, key=lambda x: x['evaluation_results']['fitness_score'])
+
+        logging.info("Best Performing Algorithm:")
+        logging.info(f"Program Code:\n{best_performer['program_code']}")
+        logging.info(f"Equation:\n{best_performer['equation']}")
+        logging.info(f"Pseudocode:\n{best_performer['pseudocode']}")
+        logging.info(f"Fitness Score: {best_performer['evaluation_results']['fitness_score']}")
 
     except Exception as e:
         logging.error("An error occurred in the main process: ", exc_info=True)
